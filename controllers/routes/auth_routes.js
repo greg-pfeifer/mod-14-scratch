@@ -1,12 +1,12 @@
 const router = require('express').Router();
 const User = require('../../models/User');
 
-// function isLoggedIn (req, res, next) {
-//     if (req.session.user_id) return res.redirect('/dashboard');
-//     next();
-//   }
+function isLoggedIn (req, res, next) {
+    if (req.session.user_id) return res.redirect('/dashboard');
+    next();
+  }
 
-// CREATE new user
+// CREATE new user - endpoint: auth/register
 router.post('/register', isLoggedIn, async (req, res) => {
     const formData = req.body;
     try {

@@ -76,35 +76,71 @@ footer {
 
 /* REGISTER-PAGE SELECTORS */
 
-.register-body  {
+.register {
     display: flex;
     justify-content: center;
     align-items: center;
-    text-align: center;
-    font-size: 30px;
+    padding-top: 50px;
 }
 
-.register {
-    padding-bottom: 30%;
-}
-
-.register-username, .register-password {
-    padding: 8px 0 8px 0;
-}
-
-.register-body button {
+.register button {
     width: 100%;
-    text-align: center;
+    border-radius: 10px;
     background-color: darkslateblue;
     color: white;
-    border-radius: 10px;
-    font-size: 30px;
 }
 
-.register-body input {
-    font-size: 30px;
-    justify-content: end;
+form div {
+    padding: 6px 0 6px 0;
 }
 
 
+/* DASHBOARD SELECTORS */
+
+.dash-buttons {
+    display: flex;
+    height: 80vh;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.dash-buttons button {
+    border-radius: 20px;
+    background-color: darkslateblue;
+    color: white;
+    font-size: 1.4em;
+    padding: 25px;
+}
+
+/* NEW LISTING PAGE SELECTORS */
+
+.new-listing {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5em;
+}
+
+.newlisting label, input {
+    display: flex;
+    font-size: 0.8em;
+}
+
+.new-listing button {
+    width: 90%;
+    border-radius: 8px;
+    background-color: darkslateblue;
+    color: white;
+    font-size: 1.2em;
+}
+
+.new-listing form, input {
+    width: 90%;
+}
+
+.input-content {
+    height: 30vh;
+}
 
