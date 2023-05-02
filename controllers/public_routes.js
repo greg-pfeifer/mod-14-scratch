@@ -1,9 +1,14 @@
 const router = require('express').Router();
-const { Blogpost } = require('../models/index')
+const { Blogpost, Comment } = require('../models/index')
 
 // GET all posts for homepage
 router.get('/', async (req, res) => {
-  const allBlogpost = await Blogpost.findAll()
+  const allBlogpost = await Blogpost.findAll({
+    include: [{
+      model: Comment
+    }
+    ]
+  })
   res.render('index', {
     data: allBlogpost,
     loggedIn: req.session.userId && true
