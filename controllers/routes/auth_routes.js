@@ -21,5 +21,42 @@ router.post('/register', isLoggedIn, async (req, res) => {
       res.redirect('/register');
     }
   });
+
+  // Login
+router.post('/login', isLoggedIn, async (req, res) => {
+  const formData = req.body;
+
+  try {
+    const user = await User.findOne({
+      where: {
+        username: formData.username,
+      },
+    });
+
+    if (!user) {
+      return res.redirect('/register');
+    }
+
+    const validPassword = await user.checkPassword(formData.password);
+
+    if (!validPassword) {
+      return res.redirect('/login')
+    }
+
+    req.session.userId = user.id;
+
+    res.redirect('/dashboard');
+  } catch (err) {
+    console.log(err);
+    res.redirect('/login');
+  }
+});
+
+// Logout
+router.get('/logout', (req, res) => {
+  req.session.destroy(() => {
+    res.redirect('/');
+  });
+});
   
   module.exports = router

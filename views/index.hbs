@@ -2,9 +2,11 @@
     {{#each data as |data|}}
     <div class="post-body">
         <p class="post-title">{{data.title}}</p>
-        <p class="post-author">Posted by Greg Pfeifer on 04/26/2023</p>
+        <p class="post-author">Posted by User on {{data.createdAt}}</p>
         <p class="post-content">{{data.content}}</p>
     </div>
+        <a href="/newcomment">
+            <button class="add-comment">Add Comment</button>
+        </a>
     {{/each}}
 </article>
-

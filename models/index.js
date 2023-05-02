@@ -1,4 +1,5 @@
 module.exports = {
     Blogpost: require('./Blogpost'),
-    User: require('./User')
+    User: require('./User'),
+    Comment: require('./Comment')
 }
