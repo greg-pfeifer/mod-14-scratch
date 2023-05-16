@@ -24,7 +24,7 @@ const editFormHandler = async function(event) {
 };
 
 const deleteClickHandler = async function() {
-  await fetch(`/post/${postId}`, {
+  await fetch(`/deletepost/${postId}`, {
     method: 'DELETE'
   });
 
@@ -34,6 +34,6 @@ const deleteClickHandler = async function() {
 document
   .querySelector('#edit-post-form')
   .addEventListener('submit', editFormHandler);
-// document
-//   .querySelector('#delete-btn')
-//   .addEventListener('click', deleteClickHandler);
+document
+  .querySelector('#delete-btn')
+  .addEventListener('click', deleteClickHandler);

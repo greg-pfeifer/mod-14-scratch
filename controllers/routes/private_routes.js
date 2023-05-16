@@ -55,7 +55,7 @@ router.put('/updatepost/:id', isAuthenticated, (req, res) => {
   .catch(err => res.status(400).json(err))
 })
 
-router.delete('/newpost/:id', isAuthenticated, (req, res) => {
+router.delete('/deletepost/:id', isAuthenticated, (req, res) => {
   Blogpost.destroy(
     {
       where: {
