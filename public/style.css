@@ -146,10 +146,14 @@ form div {
     height: 30vh;
 }
 
-/* ADD COMMENT BUTTON */
+/* COMMENT/UPDATE/DELETE BUTTONS */
+
+.button-padding {
+    padding-top: 8px;
+}
 
 .add-comment {
-    width: 15%;
+    width: 100%;
     border-radius: 8px;
     background: darkslateblue;
     color: white;
@@ -157,3 +161,31 @@ form div {
     font-size: 1.2em;
     padding: 10px;
 }
+
+.action-buttons {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+/* COMMENT TEXT STYLING */
+
+.comment-body {
+    border: 3px double gray;
+    padding: 8px;
+}
+
+.comment-text {
+    font-size: 1em;
+    font-weight: normal;
+    font-style: italic;
+    padding-bottom: 9px;
+}
+
+.comment-author {
+    font-size: 1em;
+    font-weight: bold;
+    font-style: italic;
+    color: darkslateblue;
+}
+
+

@@ -6,11 +6,14 @@ router.get('/', async (req, res) => {
   const allBlogpost = await Blogpost.findAll({
     include: [{
       model: Comment
-    }
-    ]
+    }]
   })
+  const blogData = allBlogpost.map(post => post.get({
+    plain: true
+  }))
+  // console.log(blogData)
   res.render('index', {
-    data: allBlogpost,
+    data: blogData,
     loggedIn: req.session.userId && true
   });
 });

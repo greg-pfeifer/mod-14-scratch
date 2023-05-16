@@ -1,12 +1,19 @@
 
 const Blogpost = require('./Blogpost')
 const Comment = require('./Comment')
+const User = require('./User')
+
+
+Blogpost.hasMany(Comment, {
+    foreignKey: "blogpost_id", 
+    onDelete: "cascade"
+})
 
 module.exports = {
-    Blogpost: require('./Blogpost'),
-    User: require('./User'),
-    Comment: require('./Comment')
+    Blogpost,
+    User,
+    Comment
 }
 
-Blogpost.hasMany(Comment)
+
 
